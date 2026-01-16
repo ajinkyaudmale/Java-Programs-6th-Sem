@@ -1,13 +1,15 @@
 # JAVA COLLECTION PROGRAMS
-## Complete Set of 10 Programs with Sample Outputs
+
+## Complete Set of 10 Programs with Questions, Solutions & Outputs
 
 ---
 
-## Program 1: HashSet - Friends Names in Ascending Order
+## Question 1
 
-**Description:** Read 'N' names of friends, store in HashSet and display in ascending order.
+**Write a java program to read 'N' names of your friends, store it into HashSet and display them in ascending order.**
 
-**Code:**
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -15,20 +17,20 @@ public class FriendsHashSet {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         HashSet<String> friends = new HashSet<>();
-        
+
         System.out.print("Enter number of friends: ");
         int n = sc.nextInt();
         sc.nextLine();
-        
+
         System.out.println("Enter names of friends:");
         for(int i = 0; i < n; i++) {
             System.out.print("Friend " + (i+1) + ": ");
             friends.add(sc.nextLine());
         }
-        
+
         ArrayList<String> sortedList = new ArrayList<>(friends);
         Collections.sort(sortedList);
-        
+
         System.out.println("\nFriends names in ascending order:");
         for(String name : sortedList) {
             System.out.println(name);
@@ -38,7 +40,8 @@ public class FriendsHashSet {
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Enter number of friends: 5
 Enter names of friends:
@@ -57,11 +60,16 @@ David
 
 ---
 
-## Program 2: LinkedList String Operations
+## Question 2
 
-**Description:** Create LinkedList of String objects and perform: (i) Add at end (ii) Delete first (iii) Display in reverse
+**Write a Java program to create LinkedList of String objects and perform the following:**
 
-**Code:**
+- **(i) Add element at the end of the list**
+- **(ii) Delete first element of the list**
+- **(iii) Display the contents of list in reverse order**
+
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -69,30 +77,30 @@ public class LinkedListString {
     public static void main(String[] args) {
         LinkedList<String> list = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Enter number of initial elements: ");
         int n = sc.nextInt();
         sc.nextLine();
-        
+
         System.out.println("Enter elements:");
         for(int i = 0; i < n; i++) {
             System.out.print("Element " + (i+1) + ": ");
             list.add(sc.nextLine());
         }
-        
+
         System.out.println("\nOriginal List: " + list);
-        
+
         System.out.print("\nEnter element to add at end: ");
         String newElement = sc.nextLine();
         list.addLast(newElement);
         System.out.println("After adding at end: " + list);
-        
+
         if(!list.isEmpty()) {
             String removed = list.removeFirst();
             System.out.println("\nRemoved first element: " + removed);
             System.out.println("After removing first: " + list);
         }
-        
+
         System.out.println("\nList in reverse order:");
         for(int i = list.size() - 1; i >= 0; i--) {
             System.out.println(list.get(i));
@@ -102,7 +110,8 @@ public class LinkedListString {
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Enter number of initial elements: 4
 Enter elements:
@@ -128,11 +137,16 @@ Banana
 
 ---
 
-## Program 3: City and STD Code HashMap
+## Question 3
 
-**Description:** Store city names and STD codes. Perform: (i) Add new city (ii) Remove city (iii) Search city
+**Write a Java program to store city names and their STD codes using an appropriate collection and perform following operations:**
 
-**Code:**
+- **(i) Add a new city and its code (No duplicates)**
+- **(ii) Remove a city from the collection**
+- **(iii) Search for a city name and display the code**
+
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -140,11 +154,11 @@ public class CitySTDCode {
     public static void main(String[] args) {
         HashMap<String, String> cityMap = new HashMap<>();
         Scanner sc = new Scanner(System.in);
-        
+
         cityMap.put("Mumbai", "022");
         cityMap.put("Delhi", "011");
         cityMap.put("Pune", "020");
-        
+
         while(true) {
             System.out.println("\n=== City STD Code Manager ===");
             System.out.println("1. Add new city");
@@ -155,7 +169,7 @@ public class CitySTDCode {
             System.out.print("Enter choice: ");
             int choice = sc.nextInt();
             sc.nextLine();
-            
+
             switch(choice) {
                 case 1:
                     System.out.print("Enter city name: ");
@@ -169,7 +183,7 @@ public class CitySTDCode {
                         System.out.println("City added successfully!");
                     }
                     break;
-                    
+
                 case 2:
                     System.out.print("Enter city name to remove: ");
                     String removeCity = sc.nextLine();
@@ -179,7 +193,7 @@ public class CitySTDCode {
                         System.out.println("City not found!");
                     }
                     break;
-                    
+
                 case 3:
                     System.out.print("Enter city name to search: ");
                     String searchCity = sc.nextLine();
@@ -190,19 +204,19 @@ public class CitySTDCode {
                         System.out.println("City not found!");
                     }
                     break;
-                    
+
                 case 4:
                     System.out.println("\nAll Cities and STD Codes:");
                     for(Map.Entry<String, String> entry : cityMap.entrySet()) {
                         System.out.println(entry.getKey() + " : " + entry.getValue());
                     }
                     break;
-                    
+
                 case 5:
                     System.out.println("Exiting...");
                     sc.close();
                     return;
-                    
+
                 default:
                     System.out.println("Invalid choice!");
             }
@@ -211,7 +225,8 @@ public class CitySTDCode {
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 === City STD Code Manager ===
 1. Add new city
@@ -251,11 +266,12 @@ Delhi : 011
 
 ---
 
-## Program 4: Sorted Set with Search (No Duplicates)
+## Question 4
 
-**Description:** Accept 'n' integers, store in sorted order without duplicates, and search for an element.
+**Write a Java program to accept 'n' integers from the user and store them in a collection. Display them in the sorted order. The collection should not accept duplicate elements. Search for a particular element using predefined search method in the Collection framework.**
 
-**Code:**
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -263,34 +279,35 @@ public class SortedSetWithSearch {
     public static void main(String[] args) {
         TreeSet<Integer> numbers = new TreeSet<>();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Enter number of integers: ");
         int n = sc.nextInt();
-        
+
         System.out.println("Enter integers:");
         for(int i = 0; i < n; i++) {
             System.out.print("Number " + (i+1) + ": ");
             numbers.add(sc.nextInt());
         }
-        
+
         System.out.println("\nIntegers in sorted order (duplicates removed):");
         System.out.println(numbers);
-        
+
         System.out.print("\nEnter number to search: ");
         int search = sc.nextInt();
-        
+
         if(numbers.contains(search)) {
             System.out.println(search + " is present in the collection");
         } else {
             System.out.println(search + " is not present in the collection");
         }
-        
+
         sc.close();
     }
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Enter number of integers: 7
 Enter integers:
@@ -311,11 +328,12 @@ Enter number to search: 23
 
 ---
 
-## Program 5: TreeSet with Colors
+## Question 5
 
-**Description:** Create TreeSet, add colors and print in ascending order.
+**Write a java program to create a TreeSet, add some colors (String) and print out the content of TreeSet in ascending order.**
 
-**Code:**
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -323,28 +341,29 @@ public class ColorTreeSet {
     public static void main(String[] args) {
         TreeSet<String> colors = new TreeSet<>();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Enter number of colors: ");
         int n = sc.nextInt();
         sc.nextLine();
-        
+
         System.out.println("Enter colors:");
         for(int i = 0; i < n; i++) {
             System.out.print("Color " + (i+1) + ": ");
             colors.add(sc.nextLine());
         }
-        
+
         System.out.println("\nColors in ascending order:");
         for(String color : colors) {
             System.out.println(color);
         }
-        
+
         sc.close();
     }
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Enter number of colors: 6
 Enter colors:
@@ -365,11 +384,12 @@ Yellow
 
 ---
 
-## Program 6: Sorted Integers Without Duplicates
+## Question 6
 
-**Description:** Accept 'N' integers, store and display in sorted order without duplicates.
+**Write a java program to accept 'N' integers from a user. Store and display integers in sorted order having proper collection class. The collection should not accept duplicate elements.**
 
-**Code:**
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -377,10 +397,10 @@ public class SortedIntegersNoDuplicates {
     public static void main(String[] args) {
         TreeSet<Integer> numbers = new TreeSet<>();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Enter number of integers: ");
         int n = sc.nextInt();
-        
+
         System.out.println("Enter integers:");
         for(int i = 0; i < n; i++) {
             System.out.print("Integer " + (i+1) + ": ");
@@ -389,21 +409,22 @@ public class SortedIntegersNoDuplicates {
                 System.out.println("  (Duplicate! Not added)");
             }
         }
-        
+
         System.out.println("\nIntegers in sorted order:");
         System.out.println(numbers);
-        
+
         System.out.println("\nDetailed display:");
         for(Integer num : numbers) {
             System.out.println(num);
         }
-        
+
         sc.close();
     }
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Enter number of integers: 8
 Enter integers:
@@ -432,11 +453,12 @@ Detailed display:
 
 ---
 
-## Program 7: LinkedList - Display Negative Integers
+## Question 7
 
-**Description:** Accept 'N' integers, store in LinkedList and display only negative integers.
+**Write a java program to accept 'N' Integers from a user store them into LinkedList Collection and display only negative integers.**
 
-**Code:**
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -444,18 +466,18 @@ public class LinkedListNegative {
     public static void main(String[] args) {
         LinkedList<Integer> numbers = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Enter number of integers: ");
         int n = sc.nextInt();
-        
+
         System.out.println("Enter integers:");
         for(int i = 0; i < n; i++) {
             System.out.print("Integer " + (i+1) + ": ");
             numbers.add(sc.nextInt());
         }
-        
+
         System.out.println("\nAll integers: " + numbers);
-        
+
         System.out.println("\nNegative integers:");
         boolean found = false;
         for(Integer num : numbers) {
@@ -464,17 +486,18 @@ public class LinkedListNegative {
                 found = true;
             }
         }
-        
+
         if(!found) {
             System.out.println("No negative integers found!");
         }
-        
+
         sc.close();
     }
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Enter number of integers: 8
 Enter integers:
@@ -498,11 +521,12 @@ Negative integers:
 
 ---
 
-## Program 8: LinkedList Subject Names with Iterator
+## Question 8
 
-**Description:** Accept 'N' subject names, store in LinkedList and display using Iterator.
+**Write a java program to accept 'N' Subject Names from a user store them into LinkedList Collection and Display them by using Iterator interface.**
 
-**Code:**
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -510,17 +534,17 @@ public class SubjectLinkedList {
     public static void main(String[] args) {
         LinkedList<String> subjects = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Enter number of subjects: ");
         int n = sc.nextInt();
         sc.nextLine();
-        
+
         System.out.println("Enter subject names:");
         for(int i = 0; i < n; i++) {
             System.out.print("Subject " + (i+1) + ": ");
             subjects.add(sc.nextLine());
         }
-        
+
         System.out.println("\nSubjects using Iterator:");
         Iterator<String> iterator = subjects.iterator();
         int count = 1;
@@ -528,13 +552,14 @@ public class SubjectLinkedList {
             System.out.println(count + ". " + iterator.next());
             count++;
         }
-        
+
         sc.close();
     }
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Enter number of subjects: 5
 Enter subject names:
@@ -554,11 +579,16 @@ Subjects using Iterator:
 
 ---
 
-## Program 9: LinkedList Integer Operations
+## Question 9
 
-**Description:** Create LinkedList of integers. Perform: (i) Add at first (ii) Delete last (iii) Display size
+**Write a Java program to create LinkedList of integer objects and perform the following:**
 
-**Code:**
+- **(i) Add element at first position**
+- **(ii) Delete last element**
+- **(iii) Display the size of link list**
+
+### Answer:
+
 ```java
 import java.util.*;
 
@@ -566,38 +596,39 @@ public class LinkedListIntegerOps {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.print("Enter number of initial elements: ");
         int n = sc.nextInt();
-        
+
         System.out.println("Enter integers:");
         for(int i = 0; i < n; i++) {
             System.out.print("Integer " + (i+1) + ": ");
             list.add(sc.nextInt());
         }
-        
+
         System.out.println("\nOriginal List: " + list);
         System.out.println("Size: " + list.size());
-        
+
         System.out.print("\nEnter integer to add at first position: ");
         int newElement = sc.nextInt();
         list.addFirst(newElement);
         System.out.println("After adding at first: " + list);
         System.out.println("Size: " + list.size());
-        
+
         if(!list.isEmpty()) {
             int removed = list.removeLast();
             System.out.println("\nRemoved last element: " + removed);
             System.out.println("After removing last: " + list);
             System.out.println("Final Size: " + list.size());
         }
-        
+
         sc.close();
     }
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Enter number of initial elements: 5
 Enter integers:
@@ -621,30 +652,31 @@ Final Size: 5
 
 ---
 
-## Program 10: Command Line Arguments with Iterator & ListIterator
+## Question 10
 
-**Description:** Accept student names from command line, store in collection and display using Iterator and ListIterator.
+**Write a java program to accept 'N' student names through command line, store them into the appropriate Collection and display them by using Iterator and ListIterator interface.**
 
-**Code:**
+### Answer:
+
 ```java
 import java.util.*;
 
 public class StudentNamesIterator {
     public static void main(String[] args) {
-        
+
         if(args.length == 0) {
             System.out.println("No student names provided!");
             System.out.println("Usage: java StudentNamesIterator name1 name2 name3 ...");
             return;
         }
-        
+
         ArrayList<String> students = new ArrayList<>();
-        
+
         System.out.println("Adding " + args.length + " student names...\n");
         for(String name : args) {
             students.add(name);
         }
-        
+
         System.out.println("=== Using Iterator (Forward) ===");
         Iterator<String> iterator = students.iterator();
         int count = 1;
@@ -652,7 +684,7 @@ public class StudentNamesIterator {
             System.out.println(count + ". " + iterator.next());
             count++;
         }
-        
+
         System.out.println("\n=== Using ListIterator (Forward) ===");
         ListIterator<String> listIterator = students.listIterator();
         while(listIterator.hasNext()) {
@@ -660,20 +692,21 @@ public class StudentNamesIterator {
             String name = listIterator.next();
             System.out.println("Index " + index + ": " + name);
         }
-        
+
         System.out.println("\n=== Using ListIterator (Backward) ===");
         while(listIterator.hasPrevious()) {
             int index = listIterator.previousIndex();
             String name = listIterator.previous();
             System.out.println("Index " + index + ": " + name);
         }
-        
+
         System.out.println("\nTotal students: " + students.size());
     }
 }
 ```
 
-**Sample Output:**
+### Output:
+
 ```
 Command: java StudentNamesIterator Alice Bob Charlie Diana Edward
 
@@ -729,6 +762,7 @@ Total students: 5
 ---
 
 **Document Information:**
+
 - Total Programs: 10
 - Format: Markdown
 - Page Size: A4
