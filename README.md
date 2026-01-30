@@ -773,7 +773,7 @@ Total students: 5
 
 # JAVA THREADING PROGRAMS
 
-## Complete Set of 15 Programs (Questions 11-25) with Solutions & Outputs
+## Complete Set of 10 Programs (Questions 11-20) with Solutions & Outputs
 
 ---
 
@@ -1756,7 +1756,7 @@ public class Program10_Alternative {
 - Iteration using Iterator and ListIterator
 - Sorting and handling duplicates
 
-**Part 2: Threading Programs (Questions 11-25)**
+**Part 2: Threading Programs (Questions 11-20)**
 
 - Thread creation and lifecycle management
 - Runnable interface and Thread class
@@ -1781,7 +1781,7 @@ public class Program10_Alternative {
 
 **Complete Documentation:**
 
-- **Total Programs:** 25 (10 Collection + 15 Threading)
+- **Total Programs:** 20 (10 Collection + 10 Threading)
 - **Format:** Markdown with complete executable code
 - **Difficulty Level:** Beginner to Intermediate
 - **Topics Covered:** Collections, Threading, Synchronization
